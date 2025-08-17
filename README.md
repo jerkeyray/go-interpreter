@@ -1,23 +1,20 @@
 # Go Interpreter
 ## 🗂️ Description
 
-The Go Interpreter is a software project that implements a Read-Eval-Print Loop (REPL) for a programming language. The project is designed for developers and programmers who want to experiment with a custom language or evaluate the feasibility of a new language design. The interpreter allows users to input code, tokenize it, parse it into an Abstract Syntax Tree (AST), and execute it.
+The Go Interpreter, named Go-Interpreter, is a project that implements a Read-Eval-Print Loop (REPL) interpreter for a programming language, written in Go. This project is designed for developers and programming enthusiasts who want to understand the inner workings of an interpreter. The interpreter is capable of lexing, parsing, and executing a basic programming language.
 
-The project provides a basic structure for building a programming language, including a lexer, parser, and REPL. It serves as a foundation for further development and customization of the language.
+The project provides a simple and easy-to-understand implementation of an interpreter, making it a great resource for educational purposes or for those looking to learn about interpreter design.
 
 ## ✨ Key Features
 
-### **Language Fundamentals**
-* **Lexer**: Tokenizes input into a stream of tokens
-* **Parser**: Constructs an Abstract Syntax Tree (AST) from the token stream
-* **AST**: Represents the source code in a tree-like data structure
+### Interpreter Core
+* **REPL**: A Read-Eval-Print Loop that allows users to interact with the interpreter.
+* **Lexer**: A lexer that breaks the input source code into tokens.
+* **Parser**: A parser that constructs an Abstract Syntax Tree (AST) from the tokens produced by the lexer.
+* **AST**: An Abstract Syntax Tree data structure that represents the source code.
 
-### **REPL and Execution**
-* **REPL**: Reads user input, evaluates it, and prints the result
-* **Interpreter**: Executes the AST and returns the result
-
-### **Testing and Validation**
-* **Unit tests**: Ensures the lexer, parser, and interpreter work correctly
+### Testing
+* **Unit Tests**: Comprehensive unit tests for the lexer, parser, and REPL components.
 
 ## 🗂️ Folder Structure
 
@@ -45,36 +42,39 @@ graph TD;
 
 ## ⚙️ Setup Instructions
 
-To run the project locally:
-
+To run the project locally, follow these steps:
 * Clone the repository: `git clone https://github.com/jerkeyray/go-interpreter.git`
 * Navigate to the project directory: `cd go-interpreter/pika`
-* Initialize the Go module: `go mod init`
 * Run the interpreter: `go run main.go`
+* Interact with the REPL: Type Go-like code and see the interpreter's output.
 
 ## 📝 Architecture
 
-The project consists of the following components:
+The interpreter consists of the following components:
 
-* **Lexer** (`pika/lexer/lexer.go`): takes input and produces a stream of tokens
-* **Parser** (`pika/parser/parser.go`): takes the token stream and constructs an AST
-* **AST** (`pika/ast/ast.go`): represents the source code in a tree-like data structure
-* **Interpreter** (`pika/main.go`): executes the AST and returns the result
-* **REPL** (`pika/repl/repl.go`): reads user input, evaluates it, and prints the result
+### Lexer
+
+The lexer is responsible for breaking the input source code into tokens. It is implemented in `pika/lexer/lexer.go`.
+
+### Parser
+
+The parser constructs an Abstract Syntax Tree (AST) from the tokens produced by the lexer. It is implemented in `pika/parser/parser.go`.
+
+### AST
+
+The AST represents the source code as a tree data structure. It is defined in `pika/ast/ast.go`.
+
+### REPL
+
+The REPL reads user input, lexes it, parses it, and prints the output. It is implemented in `pika/repl/repl.go`.
 
 ## 🤖 GitHub Actions
 
-This project uses GitHub Actions for automated testing and validation. The workflow is defined in `.github/workflows/main.yml` and runs on every push event. It performs the following tasks:
+This project uses GitHub Actions for automated testing. The workflow is defined in `.github/workflows/main.yml` and runs unit tests for the lexer, parser, and REPL components.
 
-* **Checkout code**: checks out the repository code
-* **Run unit tests**: runs unit tests for the lexer, parser, and interpreter
-* **Validate code**: validates the code formatting and syntax
+## 📊 Testing
 
-```mermaid
-graph TD;
- checkout-->run-tests;
- run-tests-->validate-code;
-```
+The project includes comprehensive unit tests for the lexer, parser, and REPL components. The tests are written in Go and can be run using the `go test` command.
 
 
 
